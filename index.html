@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#minutos">Minutos</a></li>
+            <li><a data-toggle="tab" href="#horas">Horas</a></li>
+            <li><a data-toggle="tab" href="#dias">Dias</a></li>
+            <li><a data-toggle="tab" href="#meses">Meses</a></li>
+            <li><a data-toggle="tab" href="#anios">Años</a></li>
+            <li><a data-toggle="tab" href="#plantillas">Plantillas</a></li>
+          </ul>
+        
+          <div class="tab-content">
+            <div id="minutos" class="tab-pane fade in active">
+                    <h3>Minutos</h3>
+                    <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbMinuto" name="selectMinutos" id="cadaMinuto" class="ml-3 d-block" onchange="calcular()" checked><b> Cada minuto</b></div></div>
+            </div>
+            <div id="horas" class="tab-pane fade">
+              <h3>Horas</h3>
+              <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbHora" name="cadaHora" id="cadaHora" class="ml-3 d-block" onchange="calcular()" checked><b> Cada hora</b></div></div>
+            </div>
+            <div id="dias" class="tab-pane fade">
+              <h3>Dias</h3>
+              <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbDia" name="cadaDia" id="cadaDia" class="ml-3 d-block" onchange="calcular()" checked><b> Cada día</b></div></div>
+            </div>
+            <div id="meses" class="tab-pane fade">
+              <h3>Meses</h3>
+              <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbMes" name="cadaMes" id="cadaMes" class="ml-3 d-block" onchange="calcular()" checked><b> Cada mes</b></div></div>
+            </div>
+            <div id="anios" class="tab-pane fade">
+                <h3>Año</h3>
+                <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbAnio" name="cadaAnio" id="cadaAnio" class="ml-3 d-block" onchange="calcular()" checked><b> Cada año</b></div></div>
+              </div>
+              <div id="plantillas" class="tab-pane fade">
+                <h3>Plantillas</h3>
+                <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbPlantilla" name="ningunaPlantilla" id="ningunaPlantilla" class="ml-3 d-block" checked><b> Ninguna plantilla</b></div></div>
+                <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbPlantilla" name="horarioLunVie6A10Cada10" id="horarioLunVie6A10Cada10" class="ml-3 d-block"><b>Cada 10 minutos Lunes a Viernes de 6AM a 10PM</b></div></div>
+                <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbPlantilla" name="horarioLunDom6A10Cada15" id="horarioLunDom6A10Cada15" class="ml-3 d-block"><b> Cada 15 minutos de lunes a domingo de 6AM a 10PM</b></div></div>
+                <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbPlantilla" name="cada5Minutos" id="cada5Minutos" class="ml-3 d-block"><b> Cada 5 minutos</b></div></div>
+                <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbPlantilla" name="cada10Minutos" id="cada10Minutos" class="ml-3 d-block"><b> Cada 10 minutos</b></div></div>
+                <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbPlantilla" name="cada10Minutos" id="cada15Minutos" class="ml-3 d-block"><b> Cada 15 minutos</b></div></div>
+                <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbPlantilla" name="cada2Horas" id="cada2Horas" class="ml-3 d-block"><b> Cada 2 Horas</b></div></div>
+                <div class="row panel panel-default" ><div class="col-md-6 offset-md-2"><input type="radio" name="rbPlantilla" name="cada3Horas" id="cada3Horas" class="ml-3 d-block"><b> Cada 3 Horas</b></div></div>
+              </div>
+          </div>
+
+            <div class="row"> <input id="formula" type="text">
+             <span class="col-md-2">Resultado</span><input class="form-control col-md-5" id="expresionCron" type="text"><button class="btn btn-success" onclick="calcular()" id="btnValidar">Recalcular</button><button class="btn btn-danger" id="btnLimpiar">Limpiar</button>
+            </div> 
+        </div>
+    </div>
+    <script src="./cron.js"></script>
+</body>
+</html>
